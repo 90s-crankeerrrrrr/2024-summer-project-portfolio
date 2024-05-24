@@ -1,0 +1,479 @@
+/* GENERAL (comment format) */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* the star key selects all elements
+on a webpage
+margin: space around an elements border
+padding: space between border and
+elements content.
+This is a general rule of thumb
+that allows for consistent layout choices
+and spacing for a web dev*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* this selector selects all 
+html elements. scroll-behaviour
+makes it so the webpage scrolls to subpages below
+instead of jumping to.*/
+html {
+    scroll-behavior: smooth;
+}
+
+/* p targets paragraphs */
+p {
+    color: rgb(85,85,85);
+}
+
+/*TRANSITION*/
+
+/*targets links and button class*/
+a, .btn {
+    /*transition effect, lasts for 300ms,
+    and has an eased speed curve*/
+    transition: all 300ms ease;
+}
+
+/* DESKTOP-NAV */
+
+nav, .nav-links {
+    display: flex;
+}
+
+/* learn about flexbox to understand this*/
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh
+}
+
+.nav-links {
+    /*gap creates space between links,
+    rem is like pixels.
+    list-style: none gets rid of
+    the bullet points. */
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+/*for when u hover on a link, pretty cool*/
+a:hover{
+    color:grey;
+    text-decoration: underline;
+    /*moves the underline bar farther away
+     from the word. decoration-color colors the bar.*/
+    text-underline-offset: 1rem;
+    text-decoration-color: rgb(181,181,181);
+}
+
+.logo {
+    font-size: 2rem
+}
+
+.logo:hover {
+    /*keeps cursor the same when u hover*/
+    cursor: default;
+}
+
+/*HAMBURGER MENU*/
+
+/*I guess hashtags are for targeting ids?*/
+#hamburger-nav {
+    display: none;
+
+}
+
+/* make understanding of after today, having trouble focusing cuz of matthew &
+natasha lol */
+.hamburger-menu {
+    /* allows other elements to be positioned relative to the icon*/
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    /* allows us to close the menu? */
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links li {
+    list-style: none;
+}
+
+.menu-links.open {
+    max-height: 300px;
+}
+
+/*calls first span element*/
+.hamburger-icon.open span:first-child{
+    /*creating an X by maniuplating the line*/
+    transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2){
+    /*makes the line disappear im assuming*/
+    opacity: 0;
+
+}
+
+.hamburger-icon.open span:last-child{
+    /*other half of the X*/
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child{
+    transform: none;
+}
+
+.hamburger-icon span:first-child{
+    transform: none;
+}
+
+.hamburger-icon span:first-child{
+    transform: none;
+}
+
+/* SECTIONS */
+
+section {
+    /*vh is view height. in CSS, view height is the area in which something takes up on a page, so 4vh is 4%*/
+    padding-top: 4vh;
+    height: 96vh;
+    /*format for margin, top and bottom first, then sides*/
+    margin: 0 10rem;
+    box-sizing: border-box;
+    /*this ensures contents don't overlap when page size is changed*/
+    min-height: fit-content;
+}
+
+.section-container {
+    display: flex;
+}
+
+/* PROFILE SECTION */
+
+#profile {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    height: 80vh;
+
+}
+
+.section__pic-container {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    /*auto horizontally centers an element (in this case the picture) in its container*/
+    margin: auto 0;
+
+}
+
+.section__text {
+    align-self: center;
+    text-align: center;
+}
+
+.section__text p {
+    font-weight: 600;
+
+}
+
+.section__text__p1 {
+    text-align: center;
+}
+
+.section__text__p2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#socials-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+/*ICONS*/
+
+.icon {
+    cursor: pointer;
+    height: 2rem;
+}
+
+/* BUTTONS */
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    /* font weight is like a bolden meter for text*/
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    /*this is what rounds the corners of the button */
+    border-radius: 2rem;
+}
+
+.btn-color-1, .btn-color-2 {
+    /*sets color and thickness of the border*/
+    border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.btn-color-1:hover, .btn-color-2:hover {
+    cursor: pointer;
+}
+
+.btn-color-1, .btn-color-2:hover {
+    background: rgb(53, 53, 53);
+    color: white;
+}
+
+.btn-color-1:hover {
+    background: rgb(0,0,0);
+}
+
+.btn-color-2 {
+    /*this gives the second button a transparent background*/
+    background: none;
+}
+
+.btn-color-2:hover {
+    border: rgb(255, 255, 255);
+}
+
+.btn-container {
+    gap: 1rem;
+}
+
+/* ABOUT SECTION */
+
+#about {
+    position: relative;
+}
+
+.about-containers {
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about-details-containers {
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.about-containers , .about-details-containers {
+    display: flex;
+}
+
+.about-pic {
+    border-radius: 2rem;
+}
+
+.arrow {
+    /*pos stays the same */
+    position: absolute;
+    right: -5rem;
+    bottom: 2.5rem;
+}
+
+.details-containers {
+    padding: 1.5rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    text-align: center;
+}
+
+.section-container {
+    gap: 4rem;
+    height: 80%;
+}
+
+.section__pic-container {
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+/* EXPERIENCE SECTION */
+
+#experience {
+    position: relative;
+}
+
+.experience-sub-title {
+    color: rgb(85, 85, 85);
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.experience-details-containers {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.article-container {
+    display: flex;
+    text-align: initial;
+    /* content wraps around other elements to fit itself inside container
+    when container changes size */
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2.5rem;
+    justify-content: space-around;
+}
+
+article {
+    display: flex;
+    width: 10rem;
+    justify-content: center;
+}
+
+article  .icon {
+    cursor: default;
+}
+
+/* PROJECTS SECTION */
+
+#projects {
+    position: relative;
+}
+
+.color-container {
+    border-color: rgb(163, 163, 163);
+    background: rgb(250, 250, 250);
+}
+
+.project-img {
+    border-radius: 2rem;
+    width: 90%;
+    height: 90%;
+}
+
+.project-title {
+    margin: 1rem;
+    color: black;
+}
+
+.project-btn {
+    color: black;
+    border-color: rgb(163, 163, 163);
+}
+
+/* CONTACT SECTION */
+
+#contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.contact-info-upper-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    background: (250,250,250);
+    margin: 2rem auto;
+    padding: 0.5rem;
+
+}
+
+.contact-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
+}
+
+.contact-info-container p {
+    font-size: larger;
+}
+
+.contact-icon {
+    cursor: default;
+    height: 2rem;
+}
+
+.email-icon {
+    height: 2.5rem;
+}
+
+/* FOOTER */
+
+footer {
+    height: 26vh;
+    margin: 0 1rem;
+}
+
+footer p {
+    text-align: center;
+}
